@@ -1,0 +1,72 @@
+# set run verbosity
+/run/verbose 1
+/tracking/verbose 1
+/event/verbose 1
+
+
+# define general particle source
+
+# particle type
+/gps/particle e-
+
+# source geometry
+/gps/pos/type Point
+/gps/pos/centre 0 0 156492.0 km
+
+# source direction/angle
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0 km
+
+# source energy distribution
+/gps/ene/type User
+/gps/hist/type energy
+
+/gps/hist/point 0.003145 10.594
+/gps/hist/point 0.003508 10.594
+/gps/hist/point 0.003884 10.962
+/gps/hist/point 0.004437 16.091
+/gps/hist/point 0.004955 15.117
+/gps/hist/point 0.005631 19.692
+/gps/hist/point 0.006323 20.172
+/gps/hist/point 0.007142 23.857
+/gps/hist/point 0.008039 26.157
+/gps/hist/point 0.009074 30.146
+/gps/hist/point 0.010211 33.165
+/gps/hist/point 0.011550 39.003
+/gps/hist/point 0.013000 42.280
+/gps/hist/point 0.014638 47.731
+/gps/hist/point 0.016515 54.704
+/gps/hist/point 0.018636 61.810
+/gps/hist/point 0.021057 70.552
+/gps/hist/point 0.023692 76.807
+/gps/hist/point 0.026748 89.051
+/gps/hist/point 0.030189 100.283
+/gps/hist/point 0.034066 113.017
+/gps/hist/point 0.038422 126.933
+/gps/hist/point 0.043388 144.724
+/gps/hist/point 0.048922 161.308
+/gps/hist/point 0.055332 186.801
+/gps/hist/point 0.062432 206.942
+/gps/hist/point 0.070553 236.681
+/gps/hist/point 0.079753 268.114
+/gps/hist/point 0.090212 304.816
+/gps/hist/point 0.101894 340.482
+/gps/hist/point 0.130140 823.204
+/gps/hist/point 0.156280 761.834
+/gps/hist/point 0.188610 942.238
+/gps/hist/point 0.226720 1110.692
+/gps/hist/point 0.271680 1310.331
+/gps/hist/point 0.325080 1556.310
+/gps/hist/point 0.388590 1850.960
+/gps/hist/point 0.464970 2226.048
+/gps/hist/point 0.557760 2704.307
+/gps/hist/point 0.672060 3331.203
+/gps/hist/point 0.815970 4194.168
+/gps/hist/point 1.185460 10768.557
+
+# output
+/OutputDirectory ../output
+/OutputFile final_simulation_PJ7N
+
+# run
+/run/beamOn 100000000

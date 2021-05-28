@@ -1,0 +1,40 @@
+# initialize viewer settings
+/vis/open OGL 800x800
+/vis/drawVolume
+/vis/viewer/set/style surface
+/vis/viewer/set/viewpointThetaPhi 0 0
+
+# set tracking settings
+/tracking/storeTrajectory 1
+/vis/scene/add/trajectories smooth
+/vis/scene/endOfEventAction accumulate -1
+
+/vis/ogl/set/displayListLimit 1000000
+
+# define general particle source
+
+# particle type
+/gps/particle e-
+
+# source geometry
+/gps/pos/type Point
+/gps/pos/centre 0 0 156492.0 km
+
+# source direction/angle
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0 km
+
+# source energy distribution
+/gps/ene/type Pow
+/gps/ene/min 15 keV
+/gps/ene/max 1.0 MeV
+/gps/ene/alpha -1.39
+
+/run/verbose 1
+/tracking/verbose 1
+/event/verbose 0
+
+/run/beamOn 500
+
+
+/vis/viewer/rebuild

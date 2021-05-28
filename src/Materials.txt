@@ -1,0 +1,650 @@
+// Material Defintion File
+// Units:
+// 	 Number Density: cm^-3
+// 	Temperature: Kelvin
+// Material Standard:
+// 	 Molecular Hydrogen (H2) : 1
+// 	 Helium (He) : 2
+// 	 Methane (CH4) : 3
+// 	 Atomic Hydrogen (H) : 4
+### New Material ###
+Mass Density = 0.00011763233968677118
+Number of elements = 3
+Temperature = 140.6910516828413
+Pressure = 0.5955661193019335
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 8.672700776736536e-05
+Number of elements = 3
+Temperature = 125.01147432709216
+Pressure = 0.39015844542064554
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 5.5087336489811915e-05
+Number of elements = 3
+Temperature = 114.38297939811433
+Pressure = 0.22675138658936442
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 2.749243029373232e-05
+Number of elements = 3
+Temperature = 112.68873378808681
+Pressure = 0.11148858512124493
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.2454688681706585e-05
+Number of elements = 3
+Temperature = 120.85899231301505
+Pressure = 0.054168725514852745
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 6.227418002833568e-06
+Number of elements = 3
+Temperature = 134.75805057277293
+Pressure = 0.030199483129108404
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 3.604323555232522e-06
+Number of elements = 3
+Temperature = 147.2655432709225
+Pressure = 0.01910124549457366
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 2.3234559373004227e-06
+Number of elements = 3
+Temperature = 156.28593801149745
+Pressure = 0.013067458117912266
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.7001620390663234e-06
+Number of elements = 3
+Temperature = 159.37423928420037
+Pressure = 0.00975091144393269
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.1513567880963052e-06
+Number of elements = 3
+Temperature = 162.47545048990068
+Pressure = 0.006731850271651477
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 8.31105623412181e-07
+Number of elements = 3
+Temperature = 164.79550982929447
+Pressure = 0.00492876790206348
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 5.954848499903147e-07
+Number of elements = 3
+Temperature = 165.97687077591132
+Pressure = 0.003556764098135631
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 4.291013866652286e-07
+Number of elements = 3
+Temperature = 167.3359584245369
+Pressure = 0.002583961067223249
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 3.0821518499920325e-07
+Number of elements = 3
+Temperature = 168.88202306501276
+Pressure = 0.001873157203034379
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 2.2440164811895645e-07
+Number of elements = 3
+Temperature = 170.30336425157873
+Pressure = 0.0013752638961755546
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.6360748344951644e-07
+Number of elements = 3
+Temperature = 171.51721233595765
+Pressure = 0.0010098285532746962
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.179859515317824e-07
+Number of elements = 3
+Temperature = 172.83603394443705
+Pressure = 0.0007338399716975689
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 8.586856792416339e-08
+Number of elements = 3
+Temperature = 174.2932509314053
+Pressure = 0.0005385816627966782
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 6.293713637199619e-08
+Number of elements = 3
+Temperature = 175.688691372437
+Pressure = 0.0003979124787135596
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 4.577272639792698e-08
+Number of elements = 3
+Temperature = 177.1372791790903
+Pressure = 0.0002917786586370243
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 3.302486143247402e-08
+Number of elements = 3
+Temperature = 178.58170462467913
+Pressure = 0.00021223389306986718
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 2.407926372593294e-08
+Number of elements = 3
+Temperature = 179.88840395432115
+Pressure = 0.00015587739676328288
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.756658768167398e-08
+Number of elements = 3
+Temperature = 181.18625445401335
+Pressure = 0.0001145379556606036
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.2680875456010306e-08
+Number of elements = 3
+Temperature = 182.53023719016312
+Pressure = 8.329536347835131e-05
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 9.190659263504815e-09
+Number of elements = 3
+Temperature = 183.817229961739
+Pressure = 6.0795250858093565e-05
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 6.6985373249712136e-09
+Number of elements = 3
+Temperature = 185.12251230305012
+Pressure = 4.4624769869225944e-05
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 4.858457916505872e-09
+Number of elements = 3
+Temperature = 186.57580529960666
+Pressure = 3.262049465801698e-05
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 3.5429895219010694e-09
+Number of elements = 3
+Temperature = 188.16257782595721
+Pressure = 2.399053287383786e-05
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 2.6028173865059375e-09
+Number of elements = 3
+Temperature = 189.65065274551273
+Pressure = 1.776375657716691e-05
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.90847638932685e-09
+Number of elements = 3
+Temperature = 190.92659606920722
+Pressure = 1.3112635638425623e-05
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.3744110895667587e-09
+Number of elements = 3
+Temperature = 192.11765463685697
+Pressure = 9.502124122579499e-06
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.0113699029224336e-09
+Number of elements = 3
+Temperature = 193.4651575206738
+Pressure = 7.041246673637307e-06
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 7.439115968173167e-10
+Number of elements = 3
+Temperature = 195.00578290564468
+Pressure = 5.220421767639366e-06
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 5.434745924895623e-10
+Number of elements = 3
+Temperature = 196.3924088404895
+Pressure = 3.840968229266024e-06
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 3.9592620940615196e-10
+Number of elements = 3
+Temperature = 197.62912712297964
+Pressure = 2.81580111665622e-06
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 2.9282251334976275e-10
+Number of elements = 3
+Temperature = 198.84835565542406
+Pressure = 2.095382151638896e-06
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 2.1942446536786236e-10
+Number of elements = 3
+Temperature = 199.59744259487985
+Pressure = 1.576074685820205e-06
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.7452733411596428e-10
+Number of elements = 3
+Temperature = 200.0724947156849
+Pressure = 1.2565726843550993e-06
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 1.2092650065472042e-10
+Number of elements = 3
+Temperature = 200.3335348229931
+Pressure = 8.717900579910475e-07
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 9.371200499123994e-11
+Number of elements = 3
+Temperature = 199.842203476882
+Pressure = 6.739368625618574e-07
+Hydrogen = 75.27685006591986
+Helium = 23.465171997582036
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 7.149721662858864e-11
+Number of elements = 3
+Temperature = 199.20520663958854
+Pressure = 5.125386172461608e-07
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 5.463756608213915e-11
+Number of elements = 3
+Temperature = 199.1567228659395
+Pressure = 3.915823320037438e-07
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 4.2412106178116814e-11
+Number of elements = 3
+Temperature = 200.1610048935558
+Pressure = 3.0549639168992487e-07
+Hydrogen = 75.27685006591987
+Helium = 23.46517199758204
+Methane = 1.257977936498073
+### New Material ###
+Mass Density = 3.303125155465306e-11
+Number of elements = 4
+Temperature = 202.41019589274165
+Pressure = 2.414608780580916e-07
+Hydrogen = 0.25236064200313774
+Hydrogen = 75.11505992667881
+Helium = 23.414739049850038
+Methane = 1.2178403814680094
+### New Material ###
+Mass Density = 2.591111747898838e-11
+Number of elements = 4
+Temperature = 206.44871071697477
+Pressure = 1.9443486765993023e-07
+Hydrogen = 0.6897226203438308
+Hydrogen = 74.85690994342185
+Helium = 23.334268975013046
+Methane = 1.119098461221266
+### New Material ###
+Mass Density = 2.0313504983201286e-11
+Number of elements = 4
+Temperature = 212.84846930390538
+Pressure = 1.581742157716733e-07
+Hydrogen = 1.1327514189630148
+Hydrogen = 74.59541515738721
+Helium = 23.252756263928557
+Methane = 1.0190771597212314
+### New Material ###
+Mass Density = 1.6144649246800048e-11
+Number of elements = 4
+Temperature = 219.5049589540073
+Pressure = 1.3048961044597835e-07
+Hydrogen = 1.581557891971623
+Hydrogen = 74.33051013767711
+Helium = 23.17018052058811
+Methane = 0.9177514497631578
+### New Material ###
+Mass Density = 1.2890303144987472e-11
+Number of elements = 4
+Temperature = 224.9552158716867
+Pressure = 1.0747398185599442e-07
+Hydrogen = 2.036255803822815
+Hydrogen = 74.06212773558379
+Helium = 23.086520813510447
+Methane = 0.8150956470829415
+### New Material ###
+Mass Density = 1.0211685414279729e-11
+Number of elements = 4
+Temperature = 230.36076591755128
+Pressure = 8.77626945436533e-08
+Hydrogen = 2.4969619254524393
+Hydrogen = 73.79019902784317
+Helium = 23.00175565805262
+Methane = 0.7110833886517741
+### New Material ###
+Mass Density = 8.167668234259128e-12
+Number of elements = 4
+Temperature = 235.83099568258842
+Pressure = 7.234054969931971e-08
+Hydrogen = 2.9637961342559285
+Hydrogen = 73.51465325762416
+Helium = 22.91586299801526
+Methane = 0.6056876101046544
+### New Material ###
+Mass Density = 6.563863794363158e-12
+Number of elements = 4
+Temperature = 241.3711125119287
+Pressure = 5.989984767245236e-08
+Hydrogen = 3.436881518081447
+Hydrogen = 73.23541777314742
+Helium = 22.82882018650897
+Methane = 0.49888052226216467
+### New Material ###
+Mass Density = 5.319418368715587e-12
+Number of elements = 4
+Temperature = 246.96616758693582
+Pressure = 5.0003451062961285e-08
+Hydrogen = 3.916344483428775
+Hydrogen = 72.95241796382169
+Helium = 22.74060396604682
+Methane = 0.3906335867027276
+### New Material ###
+Mass Density = 4.3094586221781114e-12
+Number of elements = 4
+Temperature = 252.47880524666425
+Pressure = 4.169492948170517e-08
+Hydrogen = 4.402314868053706
+Hydrogen = 72.66557719377974
+Helium = 22.651190447826295
+Methane = 0.28091749034024294
+### New Material ###
+Mass Density = 3.4630317033033403e-12
+Number of elements = 4
+Temperature = 257.9624378139137
+Pressure = 3.4467181958920807e-08
+Hydrogen = 4.894926058188706
+Hydrogen = 72.37481673268984
+Helium = 22.560555090161934
+Methane = 0.16970211895952994
+### New Material ###
+Mass Density = 2.785537130547326e-12
+Number of elements = 4
+Temperature = 263.74923326234136
+Pressure = 2.8541086663483933e-08
+Hydrogen = 5.394315110602068
+Hydrogen = 72.08005568371087
+Helium = 22.468672676027676
+Methane = 0.056956529659388626
+### New Material ###
+Mass Density = 2.2661338889851345e-12
+Number of elements = 3
+Temperature = 269.58809883314825
+Pressure = 2.3859949778348614e-08
+Hydrogen = 5.773456796988153
+Hydrogen = 71.90702700638589
+Helium = 22.319516196625965
+### New Material ###
+Mass Density = 1.8563493867248275e-12
+Number of elements = 3
+Temperature = 275.11364048100734
+Pressure = 2.0021315497985885e-08
+Hydrogen = 6.028617707928106
+Hydrogen = 71.8585095496341
+Helium = 22.112872742437776
+### New Material ###
+Mass Density = 1.5108975239075072e-12
+Number of elements = 3
+Temperature = 280.5868024454833
+Pressure = 1.6682715237052553e-08
+Hydrogen = 6.285713748114194
+Hydrogen = 71.80962413860141
+Helium = 21.904662113284406
+### New Material ###
+Mass Density = 1.2248946586338167e-12
+Number of elements = 3
+Temperature = 285.8757367475682
+Pressure = 1.3832175501591162e-08
+Hydrogen = 6.544767015244407
+Hydrogen = 71.76036657153088
+Helium = 21.694866413224695
+### New Material ###
+Mass Density = 9.957759730657764e-13
+Number of elements = 3
+Temperature = 291.4035126791838
+Pressure = 1.1506073303031067e-08
+Hydrogen = 6.805799944754084
+Hydrogen = 71.71073258244684
+Helium = 21.483467472799088
+### New Material ###
+Mass Density = 8.202733454836563e-13
+Number of elements = 3
+Temperature = 297.09078371895225
+Pressure = 9.70020892758343e-09
+Hydrogen = 7.068835316293057
+Hydrogen = 71.66071783992291
+Helium = 21.27044684378403
+### New Material ###
+Mass Density = 6.792404296483781e-13
+Number of elements = 3
+Temperature = 302.67243622573494
+Pressure = 8.214832220204608e-09
+Hydrogen = 7.333896260352433
+Hydrogen = 71.61031794582232
+Helium = 21.05578579382525
+### New Material ###
+Mass Density = 5.621736793982778e-13
+Number of elements = 3
+Temperature = 308.11210218790137
+Pressure = 6.947954879277209e-09
+Hydrogen = 7.601006265045066
+Hydrogen = 71.55952843400839
+Helium = 20.83946530094656
+### New Material ###
+Mass Density = 4.699031637100551e-13
+Number of elements = 3
+Temperature = 313.5986687636232
+Pressure = 5.933927262821659e-09
+Hydrogen = 7.870189183043884
+Hydrogen = 71.50834476902533
+Helium = 20.621466047930802
+### New Material ###
+Mass Density = 2.2052715214120396e-13
+Number of elements = 3
+Temperature = 351.67106206541314
+Pressure = 3.1973410090344104e-09
+Hydrogen = 9.530201379587261
+Hydrogen = 71.19270249585533
+Helium = 19.277096124557414
+### New Material ###
+Mass Density = 7.426385125961214e-14
+Number of elements = 3
+Temperature = 448.87943526500715
+Pressure = 1.4341753335915167e-09
+Hydrogen = 12.633937285309788
+Hydrogen = 70.602544026754
+Helium = 16.7635186879362
+### New Material ###
+Mass Density = 3.116852675751269e-14
+Number of elements = 3
+Temperature = 548.8794352650073
+Pressure = 7.678504508501234e-10
+Hydrogen = 15.85195636448644
+Hydrogen = 69.99065523499044
+Helium = 14.157388400523107
+### New Material ###
+Mass Density = 1.4692381029429793e-14
+Number of elements = 3
+Temperature = 648.879435265007
+Pressure = 4.472404443043751e-10
+Hydrogen = 19.36091638323009
+Hydrogen = 69.32344560900991
+Helium = 11.315638007759995
+### New Material ###
+Mass Density = 7.71519034868131e-15
+Number of elements = 3
+Temperature = 748.879435265007
+Pressure = 2.838790083646457e-10
+Hydrogen = 23.202141324206472
+Hydrogen = 68.59305761869773
+Helium = 8.204801057095796
+### New Material ###
+Mass Density = 4.428979455346151e-15
+Number of elements = 3
+Temperature = 848.879435265007
+Pressure = 1.9390493121700148e-10
+Hydrogen = 27.42517007776056
+Hydrogen = 67.79007171401003
+Helium = 4.784758208229423
+### New Material ###
+Mass Density = 2.498736895960321e-15
+Number of elements = 2
+Temperature = 973.879435265007
+Pressure = 1.3381934198378553e-10
+Hydrogen = 33.33333333333333
+Hydrogen = 66.66666666666666
+### New Material ###
+Mass Density = 1.1225977724034593e-15
+Number of elements = 2
+Temperature = 1200.0
+Pressure = 9.24505765410297e-11
+Hydrogen = 66.3986402562594
+Hydrogen = 33.6013597437406
+### New Material ###
+Mass Density = 3.789406419358595e-16
+Number of elements = 2
+Temperature = 1200.0
+Pressure = 3.337933943550016e-11
+Hydrogen = 77.97986653093541
+Hydrogen = 22.020133469064582
+### New Material ###
+Mass Density = 9.78046493725346e-17
+Number of elements = 2
+Temperature = 1200.0
+Pressure = 8.770970042878933e-12
+Hydrogen = 81.19760479041918
+Hydrogen = 18.80239520958084
+### New Material ###
+Mass Density = 1.9846329264169187e-17
+Number of elements = 2
+Temperature = 1200.0
+Pressure = 1.8226253378706856e-12
+Hydrogen = 85.5587919668864
+Hydrogen = 14.4412080331136
+### New Material ###
+Mass Density = 3.7506893579722386e-18
+Number of elements = 2
+Temperature = 1200.0
+Pressure = 3.5294663982331613e-13
+Hydrogen = 90.13509267986176
+Hydrogen = 9.864907320138231
+### New Material ###
+Mass Density = 6.899939424799339e-19
+Number of elements = 2
+Temperature = 1200.0
+Pressure = 6.631351085235498e-14
+Hydrogen = 94.18740975675978
+Hydrogen = 5.81259024324024
+### New Material ###
+Mass Density = 1.0659694372423638e-19
+Number of elements = 2
+Temperature = 1200.0
+Pressure = 1.040604937425995e-14
+Hydrogen = 97.2447508617988
+Hydrogen = 2.755249138201189
+### New Material ###
+Mass Density = 1.1297804658948091e-20
+Number of elements = 2
+Temperature = 1200.0
+Pressure = 1.1138581569338703e-15
+Hydrogen = 99.20496265350044
+Hydrogen = 0.7950373464995543
+### New Material ###
+Mass Density = 8.368909331172792e-23
+Number of elements = 1
+Temperature = 5000.0
+Pressure = 3.4516225e-17
+Hydrogen = 100.0

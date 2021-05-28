@@ -1,0 +1,7 @@
+Jupiter_Build/*
+!Jupiter_Build/.gitkeep
+
+output/*
+!output/.gitkeep
+
+**.DS_Store
