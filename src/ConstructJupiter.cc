@@ -117,7 +117,7 @@ void ConstructJupiter::DefineMaterials()
 // Construction method, returns G4VPhysicalVolume
 G4VPhysicalVolume* ConstructJupiter::Construct()
 {
-  G4GeometryManager::GetInstance()->SetWorldMaximumExtent(82000*km);
+  G4GeometryManager::GetInstance()->SetWorldMaximumExtent(320000*km);
 	return JupiterConstruction();
 }
 
@@ -155,9 +155,9 @@ G4VPhysicalVolume* ConstructJupiter::JupiterConstruction()
     while (getline(geometry_file, line))
     {
       i += 1;
-      layers_solid[i] = new G4Sphere("Atmoshpere_Solid", Rin, Rin + stod(line)*km, 0*degree, 306*degree, 0*degree, 180*degree);
-      layers_logical[i] = new G4LogicalVolume(layers_solid[i], materials[i], "Atmoshpere_Logical");
-      layers_physical[i] = new G4PVPlacement(0, G4ThreeVector(0, 0, 0), layers_logical[i], "Atmoshpere_Physical", WorldLogical, false, i);
+      layers_solid[i] = new G4Sphere("Atmoshpere_Solid_" + to_string(i), Rin, Rin + stod(line)*km, 0*degree, 306*degree, 0*degree, 180*degree);
+      layers_logical[i] = new G4LogicalVolume(layers_solid[i], materials[i], "Atmoshpere_Logical_" + to_string(i));
+      layers_physical[i] = new G4PVPlacement(0, G4ThreeVector(0, 0, 0), layers_logical[i], "Atmoshpere_Physical_" + to_string(i), WorldLogical, false, i);
       Rin += stod(line)*km;
     }
     geometry_file.close();
