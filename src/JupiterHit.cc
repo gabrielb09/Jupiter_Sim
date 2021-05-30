@@ -83,21 +83,23 @@ void JupiterHit::fPrint()
 {
   extern global_struct global;
 
-	auto analysisManager = G4AnalysisManager::Instance();
+	if ((postCopyNb_ == -1) && (particleID_ == 22)){
+		auto analysisManager = G4AnalysisManager::Instance();
 
-	analysisManager -> FillNtupleIColumn(0, int(trackID_));
-	analysisManager -> FillNtupleIColumn(1, int(particleID_));
-	analysisManager -> FillNtupleIColumn(2, int(postCopyNb_));
+		analysisManager -> FillNtupleIColumn(0, int(trackID_));
+		analysisManager -> FillNtupleIColumn(1, int(particleID_));
+		analysisManager -> FillNtupleIColumn(2, int(postCopyNb_));
 
-	analysisManager -> FillNtupleDColumn(3, double(kEnergy_/keV));
-	analysisManager -> FillNtupleDColumn(4, double(eDep_/keV));
+		analysisManager -> FillNtupleDColumn(3, double(kEnergy_/keV));
+		analysisManager -> FillNtupleDColumn(4, double(eDep_/keV));
 
-	analysisManager -> FillNtupleDColumn(5, double(pos_.getX()/km));
-	analysisManager -> FillNtupleDColumn(6, double(pos_.getY()/km));
-	analysisManager -> FillNtupleDColumn(7, double(pos_.getZ()/km));
-	analysisManager -> FillNtupleDColumn(8, double(vertexPos_.getX()/km));
-	analysisManager -> FillNtupleDColumn(9, double(vertexPos_.getY()/km));
-	analysisManager -> FillNtupleDColumn(10, double(vertexPos_.getZ()/km));
+		analysisManager -> FillNtupleDColumn(5, double(pos_.getX()/km));
+		analysisManager -> FillNtupleDColumn(6, double(pos_.getY()/km));
+		analysisManager -> FillNtupleDColumn(7, double(pos_.getZ()/km));
+		analysisManager -> FillNtupleDColumn(8, double(vertexPos_.getX()/km));
+		analysisManager -> FillNtupleDColumn(9, double(vertexPos_.getY()/km));
+		analysisManager -> FillNtupleDColumn(10, double(vertexPos_.getZ()/km));
 
-  analysisManager->AddNtupleRow();
+	  analysisManager -> AddNtupleRow();
+	}
 }
