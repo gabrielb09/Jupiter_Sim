@@ -1,5 +1,0 @@
-# initialize viewer settings
-/vis/open OGL 1000x1000
-/vis/drawVolume
-/vis/viewer/set/style surface
-/vis/viewer/set/viewpointThetaPhi 90 0

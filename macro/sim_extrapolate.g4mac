@@ -11,21 +11,21 @@
 
 # source geometry
 /gps/pos/type Point
-/gps/pos/centre 0 0 71892.0 km
+/gps/pos/centre 0 0 156492.0 km
 
 # source direction/angle
 /gps/ang/type focused
-/gps/ang/focuspoint 0 0 156492.0 km
+/gps/ang/focuspoint 0 0 0 km
 
 # source energy distribution
 /gps/ene/type Pow
-/gps/ene/min 100 keV
-/gps/ene/max 1.161 MeV
+/gps/ene/min 3 keV
+/gps/ene/max 2 MeV
 /gps/ene/alpha -1.39
 
 # output
 /OutputDirectory ../output
-/OutputFile final_simulation
+/OutputFile final_simulation_extrapolate
 
 # run
-/run/beamOn 1000000
+/run/beamOn 100000000

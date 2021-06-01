@@ -50,41 +50,20 @@ int Plot_Full(const char filename[20])
   tree = (TTree*) inFile -> Get("JupiterData");
   tree -> Print();
   // set variables to hold data
-  int eventID, trackID, particleID, nextVolNum, lastEventID;
   double energy;
-  float px, py, pz, x, y, z;
 
   // setup the variable adresses for branches
-  tree -> SetBranchAddress("eventID", &eventID);
-  tree -> SetBranchAddress("particleID", &particleID);
-  tree -> SetBranchAddress("postCopyNb", &nextVolNum);
   tree -> SetBranchAddress("energy", &energy);
-  tree -> SetBranchAddress("px", &px);
-  tree -> SetBranchAddress("py", &py);
-  tree -> SetBranchAddress("pz", &pz);
-  tree -> SetBranchAddress("x", &x);
-  tree -> SetBranchAddress("y", &y);
-  tree -> SetBranchAddress("z", &z);
 
   double max_E = 0.0;
-  int num_uly = 0;
   // loop through tree and extract data
   int length = tree -> GetEntries(); // get total number of entries
-  tree -> GetEntry(length - 1); // sets pointers to the last event
-  cout << "last eventID: " << eventID << endl;
 
   for(int i = 0; i < length; i++){
     tree -> GetEntry(i);
-    if(eventID < 10 || eventID%10000 == 0) cout << "event " << eventID << " is loaded" << endl;
-    lastEventID = eventID;
-    if (particleID == 22 && nextVolNum == -1) { // if the particle is leaving the cloud
-      spectrum -> Fill(energy);
-      if(energy > max_E){
-        max_E = energy;
-      }
-      if ((energy > 27.0) && (energy < 48.0)){
-        num_uly += 1;
-      }
+    spectrum -> Fill(energy);
+    if(energy > max_E){
+      max_E = energy;
     }
   }
 
@@ -93,7 +72,6 @@ int Plot_Full(const char filename[20])
   // write histograms to file
   spectrum -> Write("Full_Spect");
   cout << "Maximum Energy: " << max_E << endl;
-  cout << "Number of photons in Ulysseys range: " << num_uly << endl;
   delete outFile;
   return 0;
 }
