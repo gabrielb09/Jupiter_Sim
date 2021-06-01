@@ -21,7 +21,7 @@
 /gps/ene/type Pow
 /gps/ene/min 3 keV
 /gps/ene/max 1.161 MeV
-/gps/ene/alpha -1.04
+/gps/ene/alpha -0.673
 
 # output
 /OutputDirectory ../output
