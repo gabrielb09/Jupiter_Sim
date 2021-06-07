@@ -7,7 +7,7 @@
 int root2csv(){
 	gROOT->Reset();
 	// open data file
-	TFile *inFile = new TFile("../output/final_simulation.root", "READ");
+	TFile *inFile = new TFile("../output/final_simulation_extrapolate.root", "READ");
 	TTree *tree;
 	TH1D* spectrum;
 
@@ -26,7 +26,7 @@ int root2csv(){
 	tree -> SetBranchAddress("energy", &energy);
 
 	int length = tree -> GetEntries();
-	
+
 	for(int i = 0; i < length; i++){
     tree -> GetEntry(i);
 		spectrum -> Fill(energy);
@@ -34,7 +34,7 @@ int root2csv(){
 
 	FILE *out_file;
 	// open the output file
-	out_file = fopen("spectra.csv", "w");
+	out_file = fopen("spectra_2MeV.csv", "w");
 	// print header
 	fprintf(out_file, "Number of bins:%d\n", spectrum -> GetNbinsX());
 	fprintf(out_file, "Bin Center[keV],Bin Width[keV],Counts\n");

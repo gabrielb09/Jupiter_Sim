@@ -69,6 +69,8 @@ int main(int argc,char** argv)
   //
   G4UImanager * UI = G4UImanager::GetUIpointer();
 
+  UI->ApplyCommand("/control/macroPath ../macro/");
+
   if(argc==1)  // Define (G)UI terminal for interactive mode
   {
     // G4UIterminal is a (dumb) terminal
