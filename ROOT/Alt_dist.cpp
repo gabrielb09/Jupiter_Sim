@@ -6,16 +6,15 @@ using namespace std;
 // generates a histogram of X-Ray counts by altitude
 // also make histogram of X-Ray counts by altitude and energy
 
-int Alt_dist(const char filename[20])
+int Alt_dist()
 {
   gROOT -> Reset();
 
   TFile *inFile; // adress for input file
   TTree *tree; // adress for root tree stored in file
   TH1D  *xray_hist; // adress for histogram
-  TH1D  *edep_hist;
 
-  int const num_bin = 1000; // number of bins in a hist
+  int const num_bin = 100; // number of bins in a hist
   float Rj = 71492.0;
   float min, max, binSize; // maximum and minimun energy values and width of each bin
 
@@ -27,22 +26,14 @@ int Alt_dist(const char filename[20])
 	xray_hist -> GetXaxis() -> SetTitle("Altitude [km]");
 	xray_hist -> GetYaxis() -> SetTitle("Fractional Counts");
 
-  edep_hist = new TH1D();
-  edep_hist -> SetName("edep_dist");
-  edep_hist -> SetTitle("Deposited Energy Altitude Distribution");
-  edep_hist -> SetBins(num_bin, 0, 1000.0);
-  // assign titles to the histogram axes
-	edep_hist -> GetXaxis() -> SetTitle("Altitude [km]");
-	edep_hist -> GetYaxis() -> SetTitle("Fractional Energy Deposition");
-
   // file paths for input and output files
   const char* dir = "../output/"; // filepath from ROOT directory to output directory
 
   char outputFile[100]; // output file memory location
-	sprintf(outputFile, "%s%s%s%s", dir, "plots/", filename ,"_altitude.root"); // output file name
+	sprintf(outputFile, "%s%s%s%s", dir, "plots/", "final_simulation" ,"_altitude.root"); // output file name
 
 	char inputFile[100]; // input file memory location
-  sprintf(inputFile, "%s%s%s", dir, filename, ".root"); // input file name and directory
+  sprintf(inputFile, "%s%s%s", dir, "final_simulation", ".root"); // input file name and directory
 
   cout << "********* opening " << inputFile << " *********" << endl; // let me know that we are OPENING this bish
 
@@ -72,7 +63,6 @@ int Alt_dist(const char filename[20])
   int length = tree -> GetEntries(); // get total number of entries
 
   int total_counts = 0;
-  double total_edep = 0.0;
 
   double radius;
   string bar;
@@ -90,17 +80,25 @@ int Alt_dist(const char filename[20])
       xray_hist -> Fill(radius - Rj);
       total_counts += 1;
     }
-
-    radius = sqrt((x*x) + (y*y) + (z*z));
-    edep_hist -> Fill(radius - Rj, edep);
-
   }
 
-  // save to a file
-  TFile *outFile = new TFile(outputFile,"RECREATE");
-  // write histograms to file
-  xray_hist -> Write("Altitude_Spect");
-  edep_hist -> Write("EDep_Spect");
-  delete outFile;
+  double bin_height;
+
+  for(int i = 0; i <= xray_hist -> GetNbinsX(); i++){
+      bin_height = xray_hist -> GetBinContent(i);
+      xray_hist -> SetBinContent(i, bin_height/total_counts);
+  }
+
+  FILE *out_file;
+	// open the output file
+	out_file = fopen("../../Figures/altitudes.csv", "w");
+	// print header
+	fprintf(out_file, "Number of bins:%d\n", xray_hist -> GetNbinsX());
+	fprintf(out_file, "Bin Center[km],Bin Width[km],Counts\n");
+	for (int i = 1; i <= xray_hist -> GetNbinsX(); i++) {
+		fprintf(out_file, "%g,%g,%g\n", xray_hist -> GetBinCenter(i), xray_hist -> GetBinWidth(i), xray_hist -> GetBinContent(i));
+	}
+	fclose(out_file);
+
   return 0;
 }

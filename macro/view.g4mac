@@ -1,5 +1,5 @@
 # initialize viewer settings
-/vis/open OGL 800x800
+/vis/open OGL 1200x800
 /vis/viewer/set/lineSegmentsPerCircle 96
 /vis/viewer/set/style surface
 /vis/viewer/zoom 45

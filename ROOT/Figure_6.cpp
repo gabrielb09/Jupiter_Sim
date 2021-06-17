@@ -15,6 +15,38 @@ void BinLogX(TH1*h)
     delete new_bins;
 
 }
+/*
+void BrokenPwrLaw(TF1 *func, Double_t xmin, Double_t xmax, TH1 *h)
+{
+  func -> SetFunction(TFormula("[0]*pow(x/[1], -1*[2])*pow(0.5*(1+pow(x/[1], 1/[4])), ([2] - [3])*[4])"));
+  func -> SetRange(xmin, xmax);
+  func -> SetParName(0, "Amplitude");
+  h -> GetXaxis() -> SetRangeUser(xmin,xmax);
+  func -> SetParLimits(0, h -> GetMinimum(), h -> GetMaximum());
+  h -> GetXaxis() -> SetRange(0,0);
+  func -> SetParName(1, "E_break");
+  func -> SetParLimits(1, xmin, xmax);
+  func -> SetParName(2, "alpha_1");
+  func -> SetParLimits(2, -5, 5);
+  func -> SetParName(3, "alpha_2");
+  func -> SetParLimits(3, -5, 5);
+  func -> SetParName(4, "delta");
+  func -> SetParLimits(4, 1e-4, 10);
+}
+
+void PwrLaw(TF1 *func, Double_t xmin, Double_t xmax, TH1 *h)
+{
+  func -> SetFunction(TFormula("[0]*pow(x/[1], -1*[2])"));
+  func -> SetParName(0, "Amplitude");
+  h -> GetXaxis() -> SetRangeUser(xmin,xmax);
+  func -> SetParLimits(0, h -> GetMinimum(), h -> GetMaximum());
+  h -> GetXaxis() -> SetRange(0,0);
+  func -> SetParName(1, "x_0");
+  func -> SetParLimits(1, xmin, xmax);
+  func -> SetParName(2, "alpha_1");
+  func -> SetParLimits(2, -5, 5);
+}
+*/
 
 int Figure_6()
 {
@@ -45,7 +77,7 @@ int Figure_6()
   spectrum_avg -> SetTitle("Simulated X-Ray Spectrum");
   spectrum_sft -> SetTitle("Simulated X-Ray Spectrum");
 
-  int nbins = 200;
+  int nbins = 150;
   double e_min = 1.0;
   double e_max = 1014.0;
 
@@ -141,7 +173,6 @@ int Figure_6()
       bin_width = spectrum_sft -> GetBinWidth(i);
       spectrum_sft -> SetBinContent(i, bin_height/bin_width);
   }
-
   // save to a file
   TFile *outFile = new TFile(outputFile,"RECREATE");
   // write histograms to file
@@ -159,14 +190,125 @@ int Figure_6()
   spectrum_avg -> SetStats(0);
   spectrum_sft -> SetStats(0);
 
-  spectrum_hrd -> SetLineColor(kRed);
-  spectrum_hrd -> Draw("SAME HIST");
+  spectrum_hrd ->SetMinimum(50.);
+
+  spectrum_hrd -> SetLineColor(kBlue);
+  spectrum_hrd -> SetLineWidth(1);
+  spectrum_hrd -> Draw("SAME E");
 
   spectrum_avg -> SetLineColor(kBlack);
-  spectrum_avg -> Draw("SAME HIST");
+  spectrum_avg -> SetLineWidth(1);
+  spectrum_avg -> Draw("SAME E");
 
-  spectrum_sft -> SetLineColor(kBlue);
-  spectrum_sft -> Draw("SAME HIST");
+  spectrum_sft -> SetLineColor(kOrange);
+  spectrum_sft -> SetLineWidth(1);
+  spectrum_sft -> Draw("SAME E");
+
+/*
+  TF1 *pwrLawSft = new TF1();
+  TF1 *brknPwrLawSft = new TF1();
+  PwrLaw(pwrLawSft, 3.0, 20.0, spectrum_sft);
+  BrokenPwrLaw(brknPwrLawSft, 3.0, 20.0, spectrum_sft);
+
+  TF1 *pwrLawAvg = new TF1();
+  TF1 *brknPwrLawAvg = new TF1();
+  PwrLaw(pwrLawAvg, 3.0, 20.0, spectrum_avg);
+  BrokenPwrLaw(brknPwrLawAvg, 3.0, 20.0, spectrum_avg);
+
+  TF1 *pwrLawHrd = new TF1();
+  TF1 *brknPwrLawHrd = new TF1();
+  PwrLaw(pwrLawHrd, 3.0, 20.0, spectrum_hrd);
+  BrokenPwrLaw(brknPwrLawHrd, 3.0, 20.0, spectrum_hrd);
+
+  */
+  double xmin = 3.0;
+  double xmax = 20.0;
+  TF1 *brknPwrLaw = new TF1("brknPwrLaw", "[0]*pow(x/[1], -1*[2])*pow(0.5*(1+pow(x/[1], 1/[4])), ([2] - [3])*[4])", xmin, xmax);
+  brknPwrLaw -> SetParName(0, "Amplitude");
+  spectrum_sft -> GetXaxis() -> SetRangeUser(xmin, xmax);
+  spectrum_hrd -> GetXaxis() -> SetRangeUser(xmin, xmax);
+  brknPwrLaw -> SetParLimits(0, spectrum_sft -> GetMinimum(), spectrum_hrd -> GetMaximum());
+  spectrum_sft -> GetXaxis() -> SetRange(0,0);
+  spectrum_hrd -> GetXaxis() -> SetRange(0,0);
+  brknPwrLaw -> SetParName(1, "E_break");
+  brknPwrLaw -> SetParLimits(1, xmin, xmax);
+  brknPwrLaw -> SetParName(2, "alpha_1");
+  brknPwrLaw -> SetParLimits(2, -5, 5);
+  brknPwrLaw -> SetParName(3, "alpha_2");
+  brknPwrLaw -> SetParLimits(3, -5, 5);
+  brknPwrLaw -> SetParName(4, "delta");
+  brknPwrLaw -> SetParLimits(4, 1e-4, 10);
+
+  TF1 *pwrLaw = new TF1("pwrLaw", "[0]*pow(x/[1], -1*[2])", xmin, xmax);
+  pwrLaw -> SetParName(0, "Amplitude");
+  spectrum_sft -> GetXaxis() -> SetRangeUser(xmin, xmax);
+  spectrum_hrd -> GetXaxis() -> SetRangeUser(xmin, xmax);
+  pwrLaw -> SetParLimits(0, spectrum_sft -> GetMinimum(), spectrum_hrd -> GetMaximum());
+  spectrum_sft -> GetXaxis() -> SetRange(0,0);
+  spectrum_hrd -> GetXaxis() -> SetRange(0,0);
+  pwrLaw -> SetParName(1, "E_0");
+  pwrLaw -> SetParLimits(1, xmin, xmax);
+  pwrLaw -> SetParName(2, "alpha");
+  pwrLaw -> SetParLimits(2, -5, 5);
+
+  spectrum_hrd -> Fit(brknPwrLaw, "0", "", 3.0, 20.0);
+  spectrum_hrd -> Fit(pwrLaw, "0", "", 3.0, 20.0);
+  TF1 *hrd_pl = (TF1*)(pwrLaw -> Clone("hrd_pl"));
+  TF1 *hrd_bpl = (TF1*)(brknPwrLaw -> Clone("hrd_bpl"));
+  hrd_pl -> SetLineColor(kRed);
+  hrd_pl -> DrawF1(3.0, 20.0, "CSAME");
+  hrd_bpl -> SetLineColor(kRed);
+  hrd_bpl -> DrawF1(3.0, 20.0, "CSAME");
+
+  spectrum_avg -> Fit(brknPwrLaw, "0", "", 3.0, 20.0);
+  spectrum_avg -> Fit(pwrLaw, "0", "", 3.0, 20.0);
+  TF1 *avg_pl = (TF1*)(pwrLaw -> Clone("avg_pl"));
+  TF1 *avg_bpl = (TF1*)(brknPwrLaw -> Clone("avg_bpl"));
+  avg_pl -> SetLineColor(kRed);
+  avg_pl -> DrawF1(3.0, 20.0, "CSAME");
+  avg_bpl -> SetLineColor(kRed);
+  avg_bpl -> DrawF1(3.0, 20.0, "CSAME");
+
+  spectrum_sft -> Fit(brknPwrLaw, "0", "", 3.0, 20.0);
+  spectrum_sft -> Fit(pwrLaw, "0", "", 3.0, 20.0);
+  TF1 *sft_pl = (TF1*)(pwrLaw -> Clone("sft_pl"));
+  TF1 *sft_bpl = (TF1*)(brknPwrLaw -> Clone("sft_bpl"));
+  sft_pl -> SetLineColor(kRed);
+  sft_pl -> DrawF1(3.0, 20.0, "CSAME");
+  sft_bpl -> SetLineColor(kRed);
+  sft_bpl -> DrawF1(3.0, 20.0, "CSAME");
+
+  // output data
+  FILE *out_file;
+  // open the output file
+  out_file = fopen("../../Figures/spect_sft.csv", "w");
+  // print header
+  fprintf(out_file, "Number of bins:%d\n", spectrum_sft -> GetNbinsX());
+  fprintf(out_file, "Bin Center[km],Bin Width[km],Counts\n");
+  for (int i = 1; i <= spectrum_sft -> GetNbinsX(); i++) {
+    fprintf(out_file, "%g,%g,%g\n", spectrum_sft -> GetBinCenter(i), spectrum_sft -> GetBinWidth(i), spectrum_sft -> GetBinContent(i));
+  }
+  fclose(out_file);
+
+  // open the output file
+  out_file = fopen("../../Figures/spect_avg.csv", "w");
+  // print header
+  fprintf(out_file, "Number of bins:%d\n", spectrum_avg -> GetNbinsX());
+  fprintf(out_file, "Bin Center[km],Bin Width[km],Counts\n");
+  for (int i = 1; i <= spectrum_avg -> GetNbinsX(); i++) {
+    fprintf(out_file, "%g,%g,%g\n", spectrum_avg -> GetBinCenter(i), spectrum_avg -> GetBinWidth(i), spectrum_avg -> GetBinContent(i));
+  }
+  fclose(out_file);
+
+  // open the output file
+  out_file = fopen("../../Figures/spect_hrd.csv", "w");
+  // print header
+  fprintf(out_file, "Number of bins:%d\n", spectrum_hrd -> GetNbinsX());
+  fprintf(out_file, "Bin Center[km],Bin Width[km],Counts\n");
+  for (int i = 1; i <= spectrum_hrd -> GetNbinsX(); i++) {
+    fprintf(out_file, "%g,%g,%g\n", spectrum_hrd -> GetBinCenter(i), spectrum_hrd -> GetBinWidth(i), spectrum_hrd -> GetBinContent(i));
+  }
+  fclose(out_file);
 
   return 0;
 }
