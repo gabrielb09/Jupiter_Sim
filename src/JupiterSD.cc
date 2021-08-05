@@ -14,6 +14,7 @@
 #include "G4ThreeVector.hh"
 #include "G4SDManager.hh"
 #include "G4VProcess.hh"
+#include "G4RunManager.hh"
 #include "G4ios.hh"
 
 JupiterSD::JupiterSD(G4String name)
@@ -44,7 +45,10 @@ G4bool JupiterSD::ProcessHits(G4Step* step,G4TouchableHistory*)
 
   JupiterHit* newHit = new JupiterHit();
 
+  newHit -> setEventID(G4RunManager::GetRunManager() -> GetCurrentEvent() -> GetEventID());
   newHit -> SetTrackID(step -> GetTrack() -> GetTrackID());
+  newHit -> SetParentID(step -> GetTrack() -> GetParentID());
+  newHit -> SetStep(step -> GetTrack() -> GetCurrentStepNumber());
   newHit -> SetParticleID(step -> GetTrack() -> GetDynamicParticle() -> GetDefinition() -> GetPDGEncoding());
   newHit -> SetPostCopyNb(step -> GetPostStepPoint() -> GetTouchableHandle() -> GetCopyNumber());
   newHit -> SetEnergy(step -> GetPreStepPoint() -> GetKineticEnergy());

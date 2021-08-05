@@ -30,7 +30,10 @@ class JupiterHit : public G4VHit
 		void fPrint();
 
   public:
+    void setEventID       (G4int eventID)     { eventID_ = eventID; };
   	void SetTrackID  		  (G4int track)      	{ trackID_ = track; };
+    void SetParentID      (G4int parent)      { parentID_ = parent; };
+    void SetStep          (G4int step)        { step_ = step; };
     void SetParticleID  	(G4int PDGid)      	{ particleID_ = PDGid; };
     void SetPostCopyNb		(G4int PostCopy)    { postCopyNb_ = PostCopy; };
     void SetEnergy   		  (G4double kinE)     { kEnergy_ = kinE; };
@@ -39,7 +42,10 @@ class JupiterHit : public G4VHit
     void SetVertexPos		  (G4ThreeVector xyz)	{ vertexPos_ = xyz; };
 
   private:
+    G4int         eventID_;
     G4int        	trackID_;
+    G4int         step_;
+    G4int         parentID_;
 		G4int         particleID_;
     G4int         postCopyNb_;
     G4double      kEnergy_;

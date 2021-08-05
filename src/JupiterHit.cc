@@ -28,7 +28,10 @@ JupiterHit::~JupiterHit() {}
 JupiterHit::JupiterHit(const JupiterHit& right):
 	G4VHit()
 {
+	eventID_				= right.eventID_;
 	trackID_   			= right.trackID_;
+	step_						= right.step_;
+	parentID_				= right.parentID_;
 	particleID_ 		= right.particleID_;
 	postCopyNb_ 		= right.postCopyNb_;
 	kEnergy_   			= right.kEnergy_;
@@ -39,7 +42,10 @@ JupiterHit::JupiterHit(const JupiterHit& right):
 
 const JupiterHit& JupiterHit::operator=(const JupiterHit& right)
 {
+	eventID_				= right.eventID_;
 	trackID_   			= right.trackID_;
+	step_						= right.step_;
+	parentID_				= right.parentID_;
 	particleID_ 		= right.particleID_;
 	postCopyNb_ 		= right.postCopyNb_;
 	kEnergy_   			= right.kEnergy_;
@@ -86,20 +92,28 @@ void JupiterHit::fPrint()
 	if ((postCopyNb_ == -1) && (particleID_ == 22)){
 		auto analysisManager = G4AnalysisManager::Instance();
 
-		analysisManager -> FillNtupleIColumn(0, int(trackID_));
-		analysisManager -> FillNtupleIColumn(1, int(particleID_));
-		analysisManager -> FillNtupleIColumn(2, int(postCopyNb_));
+		analysisManager -> FillNtupleIColumn(1, 0, int(eventID_));
+		analysisManager -> FillNtupleIColumn(1, 1, int(trackID_));
+		analysisManager -> FillNtupleIColumn(1, 2, int(particleID_));
+		analysisManager -> FillNtupleIColumn(1, 3, int(postCopyNb_));
 
-		analysisManager -> FillNtupleDColumn(3, double(kEnergy_/keV));
-		analysisManager -> FillNtupleDColumn(4, double(eDep_/keV));
+		analysisManager -> FillNtupleDColumn(1, 4, double(kEnergy_/keV));
+		analysisManager -> FillNtupleDColumn(1, 5, double(eDep_/keV));
 
-		analysisManager -> FillNtupleDColumn(5, double(pos_.getX()/km));
-		analysisManager -> FillNtupleDColumn(6, double(pos_.getY()/km));
-		analysisManager -> FillNtupleDColumn(7, double(pos_.getZ()/km));
-		analysisManager -> FillNtupleDColumn(8, double(vertexPos_.getX()/km));
-		analysisManager -> FillNtupleDColumn(9, double(vertexPos_.getY()/km));
-		analysisManager -> FillNtupleDColumn(10, double(vertexPos_.getZ()/km));
+		analysisManager -> FillNtupleDColumn(1, 6, double(pos_.getX()/km));
+		analysisManager -> FillNtupleDColumn(1, 7, double(pos_.getY()/km));
+		analysisManager -> FillNtupleDColumn(1, 8, double(pos_.getZ()/km));
+		analysisManager -> FillNtupleDColumn(1, 9, double(vertexPos_.getX()/km));
+		analysisManager -> FillNtupleDColumn(1, 10, double(vertexPos_.getY()/km));
+		analysisManager -> FillNtupleDColumn(1, 11, double(vertexPos_.getZ()/km));
 
-	  analysisManager -> AddNtupleRow();
+	  analysisManager -> AddNtupleRow(1);
+	}
+	else if(parentID_ == 0 && (step_ == 1)){
+		auto analysisManager = G4AnalysisManager::Instance();
+		analysisManager -> FillNtupleIColumn(0, 0, int(eventID_));
+		analysisManager -> FillNtupleDColumn(0, 1, int(kEnergy_/keV));
+
+		analysisManager -> AddNtupleRow(0);
 	}
 }

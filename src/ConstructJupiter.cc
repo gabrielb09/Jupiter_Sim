@@ -117,7 +117,7 @@ void ConstructJupiter::DefineMaterials()
 // Construction method, returns G4VPhysicalVolume
 G4VPhysicalVolume* ConstructJupiter::Construct()
 {
-  G4GeometryManager::GetInstance()->SetWorldMaximumExtent(320000*km);
+  G4GeometryManager::GetInstance() -> SetWorldMaximumExtent(320000*km);
 	return JupiterConstruction();
 }
 

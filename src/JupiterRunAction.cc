@@ -21,25 +21,32 @@ JupiterRunAction::JupiterRunAction()
   auto analysisManager = G4AnalysisManager::Instance();
 
   analysisManager -> SetVerboseLevel(1);
-  analysisManager -> SetNtupleMerging(true);
 
-  analysisManager -> CreateNtuple("JupiterData", "Jupiter Simulation Data");
+  analysisManager -> CreateNtuple("Primary_Electrons", "Primary Electron Data");
 
-  analysisManager -> CreateNtupleIColumn("trackID");
-  analysisManager -> CreateNtupleIColumn("particleID");
-  analysisManager -> CreateNtupleIColumn("postCopyNb");
+  analysisManager -> CreateNtupleIColumn(0, "eventID");
+  analysisManager -> CreateNtupleDColumn(0, "energy");
 
-  analysisManager -> CreateNtupleDColumn("energy");
-  analysisManager -> CreateNtupleDColumn("eDep");
+  analysisManager -> FinishNtuple(0);
 
-  analysisManager -> CreateNtupleDColumn("x");
-  analysisManager -> CreateNtupleDColumn("y");
-  analysisManager -> CreateNtupleDColumn("z");
-  analysisManager -> CreateNtupleDColumn("vertex_x");
-  analysisManager -> CreateNtupleDColumn("vertex_y");
-  analysisManager -> CreateNtupleDColumn("vertex_z");
+  analysisManager -> CreateNtuple("X_Rays", "Escaping X-Ray Data");
 
-  analysisManager->FinishNtuple();
+  analysisManager -> CreateNtupleIColumn(1, "eventID");
+  analysisManager -> CreateNtupleIColumn(1, "trackID");
+  analysisManager -> CreateNtupleIColumn(1, "particleID");
+  analysisManager -> CreateNtupleIColumn(1, "postCopyNb");
+
+  analysisManager -> CreateNtupleDColumn(1, "energy");
+  analysisManager -> CreateNtupleDColumn(1, "eDep");
+
+  analysisManager -> CreateNtupleDColumn(1, "x");
+  analysisManager -> CreateNtupleDColumn(1, "y");
+  analysisManager -> CreateNtupleDColumn(1, "z");
+  analysisManager -> CreateNtupleDColumn(1, "vertex_x");
+  analysisManager -> CreateNtupleDColumn(1, "vertex_y");
+  analysisManager -> CreateNtupleDColumn(1, "vertex_z");
+
+  analysisManager -> FinishNtuple(1);
 
 }
 

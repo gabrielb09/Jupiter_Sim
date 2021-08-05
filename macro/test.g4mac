@@ -25,8 +25,7 @@
 
 # output
 /OutputDirectory ../output
-/OutputFile final_simulation
+/OutputFile test
 
 # run
-#/run/beamOn 100000000
-/run/beamOn 100000
+/run/beamOn 5
