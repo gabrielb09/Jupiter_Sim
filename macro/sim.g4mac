@@ -28,5 +28,4 @@
 /OutputFile final_simulation
 
 # run
-#/run/beamOn 100000000
-/run/beamOn 100000
+/run/beamOn 100000000
