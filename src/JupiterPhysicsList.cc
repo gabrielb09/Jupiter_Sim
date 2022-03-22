@@ -4,33 +4,27 @@
 
 // Defines the physics lists
 
+// Load GEANT Libraries
+#include "G4EmPenelopePhysics.hh"
+#include "G4EmExtraPhysics.hh"
+#include "G4DecayPhysics.hh"
+#include "G4StoppingPhysics.hh"
+#include "G4IonPhysicsXS.hh"
+#include "G4IonElasticPhysics.hh"
+#include "G4HadronElasticPhysicsXS.hh"
+#include "G4HadronInelasticQBBC.hh"
+#include "G4NeutronTrackingCut.hh"
+// Load User Libraries
 #include "JupiterPhysicsList.hh"
 
-#include "G4DecayPhysics.hh"
-#include "G4EmStandardPhysics.hh"
-#include "G4EmExtraPhysics.hh"
-#include "G4EmLowEPPhysics.hh"
-#include "G4EmPenelopePhysics.hh"
-#include "G4IonPhysics.hh"
-#include "G4StoppingPhysics.hh"
-#include "G4HadronElasticPhysics.hh"
-#include "G4NeutronTrackingCut.hh"
-
-#include "G4HadronPhysicsQGSP_BERT.hh"
-
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-JupiterPhysicsList::JupiterPhysicsList():  G4VModularPhysicsList()
+JupiterPhysicsList::JupiterPhysicsList():G4VModularPhysicsList()
 {
-    G4cout << "<<< Geant4 Physics List simulation engine: QGSP_BERT 3.4"<<G4endl;
-    G4cout <<G4endl;
-
-
     defaultCutValue = 0.7*CLHEP::mm;
     G4int ver = 1;
     SetVerboseLevel(ver);
 
     // EM Physics
-    //RegisterPhysics( new G4EmStandardPhysics(ver) );
     RegisterPhysics( new G4EmPenelopePhysics(ver) );
 
     // Synchroton Radiation & GN Physics
@@ -39,20 +33,19 @@ JupiterPhysicsList::JupiterPhysicsList():  G4VModularPhysicsList()
     // Decays
     RegisterPhysics( new G4DecayPhysics(ver) );
 
-    // Hadron Elastic scattering
-    RegisterPhysics( new G4HadronElasticPhysics(ver) );
-
     // Hadron Physics
-    RegisterPhysics( new G4HadronPhysicsQGSP_BERT(ver));
+    RegisterPhysics( new G4HadronElasticPhysicsXS(ver) );
 
-    // Stopping Physics
     RegisterPhysics( new G4StoppingPhysics(ver) );
 
-    // Ion Physics
-    RegisterPhysics( new G4IonPhysics(ver));
+    RegisterPhysics( new G4IonPhysicsXS(ver) );
+
+    RegisterPhysics( new G4IonElasticPhysics(ver) );
+
+    RegisterPhysics( new G4HadronInelasticQBBC(ver));
 
     // Neutron tracking cut
-    RegisterPhysics( new G4NeutronTrackingCut(ver));
+    RegisterPhysics( new G4NeutronTrackingCut(ver) );
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

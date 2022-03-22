@@ -1,3 +1,7 @@
+// Jupiter Auroral Simulation
+// GEANT4-11.0.0
+// Gabriel Bridges Mar, 2021
+
 #ifndef JupiterEventAction_H
 #define JupiterEventAction_H 1
 

@@ -1,7 +1,7 @@
 # set run verbosity
-/run/verbose 1
-/tracking/verbose 1
-/event/verbose 1
+/run/verbose 0
+/tracking/verbose 0
+/event/verbose 0
 
 
 # define general particle source
@@ -10,8 +10,11 @@
 /gps/particle e-
 
 # source geometry
-/gps/pos/type Point
-/gps/pos/centre 0 0 156492.0 km
+/gps/pos/type Plane
+/gps/pos/shape Annulus
+/gps/pos/centre -5404.62 8280.53 151492.0 km
+/gps/pos/radius 16936.05 km
+/gps/pos/inner_radius 15336.05 km
 
 # source direction/angle
 /gps/ang/type focused
@@ -19,13 +22,13 @@
 
 # source energy distribution
 /gps/ene/type Pow
-/gps/ene/min 3 keV
-/gps/ene/max 2 MeV
+/gps/ene/min 10 keV
+/gps/ene/max 1.6 MeV
 /gps/ene/alpha -1.30
 
 # output
 /OutputDirectory ../output
-/OutputFile final_simulation_extrapolate
+/OutputFile visualization_test
 
 # run
 /run/beamOn 100000000

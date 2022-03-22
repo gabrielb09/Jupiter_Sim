@@ -6,15 +6,12 @@
 
 class JupiterPhysicsList: public G4VModularPhysicsList
 {
-public:
-  JupiterPhysicsList();
-  virtual ~JupiterPhysicsList();
+    public:
+        JupiterPhysicsList();
+        virtual ~JupiterPhysicsList();
 
-public:
-  // SetCuts()
-  virtual void SetCuts();
-
-
+    public:
+        virtual void SetCuts();
 };
 
 #endif

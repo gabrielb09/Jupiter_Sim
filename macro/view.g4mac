@@ -1,6 +1,6 @@
 # initialize viewer settings
 /vis/open OGL 1200x800
-/vis/viewer/set/lineSegmentsPerCircle 96
+/vis/viewer/set/lineSegmentsPerCircle 192
 /vis/viewer/set/style surface
 /vis/viewer/zoom 45
 /vis/viewer/set/viewpointThetaPhi 90 0
@@ -9,9 +9,14 @@
 /vis/drawVolume
 
 # set tracking settings
-/tracking/storeTrajectory 1
-/vis/scene/add/trajectories smooth
-/vis/scene/endOfEventAction accumulate -1
+/tracking/storeTrajectory 2
+#/vis/scene/add/trajectories smooth
+#/vis/scene/endOfEventAction accumulate -1
+#/vis/filtering/trajectories/mode hard
+#/vis/filtering/trajectories/create/particleFilter
+#/vis/filtering/trajectories/particleFilter-0/add gamma
+/vis/scene/endOfEventAction accumulate
+/vis/scene/endOfRunAction accumulate
 
 /vis/ogl/set/displayListLimit 1000000
 
@@ -33,8 +38,8 @@
 
 # source energy distribution
 /gps/ene/type Pow
-/gps/ene/min 990.0 keV
-/gps/ene/max 1.0 MeV
+/gps/ene/min 1.0 MeV
+/gps/ene/max 2.0 MeV
 /gps/ene/alpha 0.0
 
 /run/verbose 0
@@ -46,7 +51,9 @@
 /vis/modeling/trajectories/MyViewer/set e- red
 /vis/modeling/trajectories/MyViewer/set gamma yellow
 
-/run/beamOn 100
+/vis/scene/add/trajectories
+/vis/disable
+/run/beamOn 200
 
-
+/vis/enable
 /vis/viewer/rebuild

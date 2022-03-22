@@ -12,17 +12,17 @@ class G4HCofThisEvent;
 
 class JupiterSD : public G4VSensitiveDetector
 {
-public:
-    JupiterSD(G4String);
-    ~JupiterSD();
+    public:
+        JupiterSD(G4String);
+        ~JupiterSD();
 
-    void Initialize(G4HCofThisEvent*);
-    G4bool ProcessHits(G4Step*, G4TouchableHistory*);
-    void EndOfEvent(G4HCofThisEvent*);
+        void Initialize(G4HCofThisEvent*);
+        G4bool ProcessHits(G4Step*, G4TouchableHistory*);
+        void EndOfEvent(G4HCofThisEvent*);
 
-private:
-    JupiterHitsCollection* DetectorCollection;
-    G4int NbHits;
+    private:
+        JupiterHitsCollection* DetectorCollection;
+        G4int NbHits;
 };
 
 #endif

@@ -1,7 +1,7 @@
 # set run verbosity
-/run/verbose 1
-/tracking/verbose 1
-/event/verbose 1
+/run/verbose 0
+/tracking/verbose 0
+/event/verbose 0
 
 
 # define general particle source
@@ -11,7 +11,7 @@
 
 # source geometry
 /gps/pos/type Point
-/gps/pos/centre 0 0 156492.0 km
+/gps/pos/centre 0 0 151492.0 km
 
 # source direction/angle
 /gps/ang/type focused
@@ -52,9 +52,9 @@
 /gps/hist/point 0.090212 304.816
 /gps/hist/point 0.101894 340.482
 /gps/hist/point 0.130140 823.204
-/gps/hist/point 0.156280 761.834
-/gps/hist/point 0.188610 942.238
-/gps/hist/point 0.226720 1110.692
+/gps/hist/point 0.156280 913.834
+/gps/hist/point 0.188610 1442.238
+/gps/hist/point 0.226720 2110.692
 /gps/hist/point 0.271680 1310.331
 /gps/hist/point 0.325080 1556.310
 /gps/hist/point 0.388590 1850.960
@@ -66,7 +66,7 @@
 
 # output
 /OutputDirectory ../output
-/OutputFile final_simulation_PJ7N
+/OutputFile final_simulation_coherent
 
 # run
 /run/beamOn 100000000

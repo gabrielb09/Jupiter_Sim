@@ -1,21 +1,13 @@
 // Jupiter Auroral Simulation
-// GEANT4-10.6.2
-// Gabriel Bridges Aug, 2020
+// GEANT4-11.0.0
+// Gabriel Bridges Mar, 2021
 
-// Handles event actions
-
-//includes
-// user headers
-#include "JupiterEventAction.hh"
-#include "JupiterAnalysis.hh"
-#include "global.h"
-// geant headers
+// Load Geant Libraries
 #include "G4Event.hh"
-#include "G4EventManager.hh"
-#include "G4TrajectoryContainer.hh"
-#include "G4Trajectory.hh"
 #include "G4ios.hh"
-#include <unistd.h>
+// Load user Libraries
+#include "JupiterEventAction.hh"
+#include "global.h"
 
 
 JupiterEventAction::JupiterEventAction()
@@ -39,5 +31,5 @@ void JupiterEventAction::BeginOfEventAction(const G4Event* evt)
 void JupiterEventAction::EndOfEventAction(const G4Event* evt)
 {
     G4int event_id = evt -> GetEventID();
-    if (event_id < 10 || event_id%1000 == 0) G4cout << ">>> Event " << evt -> GetEventID() << G4endl;
+    if (event_id < 10 || event_id%1000 == 0) G4cout << ">>> Event " << evt -> GetEventID() << "\r";
 }
