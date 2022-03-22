@@ -43,7 +43,7 @@ void BinLog2(TH2*h){
     BinLogX(h, 1);
 }
 
-int Constraints(){
+int Dependence(){
     TFile *inFile = new TFile("../output/final_simulation_10MeV.root", "READ");
     TTree *e_tree = (TTree*) inFile -> Get("Primary_Electrons");
     TTree *x_tree = (TTree*) inFile -> Get("X_Rays");
@@ -113,17 +113,7 @@ int Constraints(){
     spectrum -> SetStats(0);
     c1 -> SetLogz();
 
-    //num_E -> Draw("SAME");
     spectrum -> Draw("SAME COLZ");
-
-    char title[8];
-    //spectrum -> RebinX(3);
-    spectrum -> ProjectionY("Total", 1, spectrum -> GetXaxis() -> GetNbins()) -> Draw("SAME");
-    //for(int i = 1; i < (spectrum -> GetXaxis() -> GetNbins())/3; i++){
-    //    spectrum -> GetXaxis() -> SetRange(i, i);
-    //    sprintf(title, "%s%i", "spect", i);
-    //    spectrum -> ProjectionY(title , 3*i, 3*(i+1)) -> Draw("SAME");
-    //}
 
     return 0;
 }

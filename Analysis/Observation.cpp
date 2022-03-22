@@ -4,7 +4,6 @@
 #include <iostream>
 #include <math.h>
 # define PI 3.14159265358979323846
-#include "getDate.cpp"
 
 using namespace std;
 
@@ -14,9 +13,9 @@ int Observation()
 {
     gROOT -> Reset();
 
-    TFile *inFile = new TFile("../output/5MeV_simulation_soft.root", "READ");
-    FILE *ns_out_file = fopen("../../Figures/Spectra/5MeV_soft_ns.csv", "w");
-    FILE *xmm_out_file = fopen("../../Figures/Spectra/5MeV_soft_xmm.csv", "w");
+    TFile *inFile = new TFile("../output/final_simulation.root", "READ");
+    FILE *ns_out_file = fopen("../../Figures/Spectra/ns.csv", "w");
+    FILE *xmm_out_file = fopen("../../Figures/Spectra/xmm.csv", "w");
 	TTree *tree;
     TH1D  *NuSTAR_spectrum; // adress for array of histograms (one for each particle species)
     TH1D  *XMM_spectrum;
@@ -60,11 +59,12 @@ int Observation()
 	for (int i = 1; i <= NuSTAR_spectrum -> GetNbinsX(); i++) {
 		fprintf(ns_out_file, "%g,%g,%g\n", NuSTAR_spectrum -> GetBinCenter(i), NuSTAR_spectrum -> GetBinWidth(i), NuSTAR_spectrum -> GetBinContent(i));
 	}
-    for (int i = 1; i <= XMM_spectrum -> GetNbinsX(); i++) {
+    for (int i = 1; i <= XMM_spectrum -> GetNbinsX(); i++){
 		fprintf(xmm_out_file, "%g,%g,%g\n", XMM_spectrum -> GetBinCenter(i), XMM_spectrum -> GetBinWidth(i), XMM_spectrum -> GetBinContent(i));
 	}
 	fclose(ns_out_file);
     fclose(xmm_out_file);
 	cout << "Output complete" << endl;
+
 	return 0;
 }
